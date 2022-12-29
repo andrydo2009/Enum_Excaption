@@ -6,7 +6,7 @@ import AllTransport.Transport;
 
 public class TruckDriver<C extends Transport & Contest> extends Driver {
 
-    public TruckDriver(String fullNameDriver, String driverLicenseCategory, int experienceDriver) {
+    public TruckDriver(String fullNameDriver, String driverLicenseCategory, int experienceDriver)  {
         super(fullNameDriver, driverLicenseCategory, experienceDriver);
     }
 
@@ -46,4 +46,8 @@ public class TruckDriver<C extends Transport & Contest> extends Driver {
     public String toString() {
         return super.toString();
     }
+
+
+
+
 }

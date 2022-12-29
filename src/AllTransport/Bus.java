@@ -65,5 +65,11 @@ public class Bus extends Transport  implements Contest{
         return super.hashCode();
     }
 
-
+    @Override
+    public void getDiagnosisTransport() {
+        System.out.println ("Автобусы не проходят диагностику" );
+    }
 }
+
+
+

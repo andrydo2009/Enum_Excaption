@@ -65,4 +65,9 @@ public class Truck extends Transport implements Contest {
     public int hashCode() {
         return super.hashCode();
     }
+
+    @Override
+    public void getDiagnosisTransport()  {
+        System.out.println ("Проводим диагностику грузовика " + getBrand () + " " + getModel ());
+    }
 }

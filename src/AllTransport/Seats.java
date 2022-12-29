@@ -6,7 +6,7 @@ public enum Seats {
     SMALL(0,25),
     MEDIUM(40,50),
     BIG(60,80),
-    EXTRA_BIG(100,120);
+    EXTRA_BIG ( 100 , 120 );
 
     private final int minimalSeats;
     private final Integer maximalSeats;
