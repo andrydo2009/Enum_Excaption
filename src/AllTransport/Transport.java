@@ -54,4 +54,23 @@ public abstract class Transport {
 
     @Override
     public abstract String toString();
+
+
+
+    public abstract void getDiagnosisTransport() throws CantDiagnosisException;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

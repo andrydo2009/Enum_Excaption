@@ -1,11 +1,9 @@
 
-import AllDrivers.BusDriver;
-import AllDrivers.CarDriver;
-import AllDrivers.TruckDriver;
+import AllDrivers.*;
 import AllTransport.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CantDiagnosisException, CantDriverLicenseException {
 
 
         Car car1=new Car("Lada","Granta",1.7, null);
@@ -38,10 +36,11 @@ public class Main {
 
         CarDriver<Car> Ivan= new CarDriver<>("Ivan Ivanovich Ivanov", "B", 5);
         System.out.println(Ivan);
-        BusDriver<Bus> Oleg= new BusDriver<>("Oleg Petrovich Petrov", "D", 10);
+        BusDriver<Bus> Oleg= new BusDriver<>("Oleg Petrovich Petrov", null, 10);
         System.out.println(Oleg);
         TruckDriver<Truck> Semen= new TruckDriver<>("Semen Semenovich Semenov", "C", 20);
         System.out.println(Semen);
+
         Ivan.goDrive(car1);
         Oleg.goDrive(bus1);
         Semen.goDrive(truck1);
@@ -51,6 +50,27 @@ public class Main {
         bus4.printType();
         bus1.printType();
         truck4.printType();
+
+        checkDiagnosis ( car1,car2,car3,car4,bus1,bus2,bus3,bus4,truck1,truck2,truck3,truck4 );
+
+
+
+
+
+
+
     }
+    public static void checkDiagnosis(Transport... transports)  {
+        for (Transport transport : transports)
+            try {
+                transport.getDiagnosisTransport();
+            } catch (CantDiagnosisException e) {
+                System.out.println(e.getMessage());
+            }
+    }
+
+
+
+
 }
 

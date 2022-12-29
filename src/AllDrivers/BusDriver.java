@@ -8,7 +8,7 @@ import AllTransport.Transport;
 
 public class BusDriver<D extends Transport & Contest> extends Driver {
 
-    public BusDriver(String fullNameDriver, String driverLicenseCategory, int experienceDriver) {
+    public BusDriver(String fullNameDriver, String driverLicenseCategory, int experienceDriver)  {
         super(fullNameDriver, driverLicenseCategory, experienceDriver);
     }
 
@@ -43,4 +43,8 @@ public class BusDriver<D extends Transport & Contest> extends Driver {
     public int hashCode() {
         return super.hashCode();
     }
+
+
+
+
 }

@@ -65,4 +65,9 @@ public class Car extends Transport implements Contest{
     public String toString() {
         return "Автомобиль " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume();
     }
+
+    @Override
+    public void getDiagnosisTransport()  {
+        System.out.println ("Проводим диагностику автомобиля " + getBrand () + " " + getModel ());
+    }
 }
