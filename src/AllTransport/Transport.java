@@ -61,18 +61,7 @@ public abstract class Transport {
 
     public abstract void getDiagnosisTransport() throws CantDiagnosisException;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+// the end

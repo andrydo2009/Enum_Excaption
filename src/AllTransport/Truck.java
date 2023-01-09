@@ -69,3 +69,6 @@ public class Truck extends Transport implements Contest {
         System.out.println ("Проводим диагностику грузовика " + getBrand () + " " + getModel ());
     }
 }
+
+
+// the end

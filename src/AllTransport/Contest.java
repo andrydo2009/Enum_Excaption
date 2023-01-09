@@ -7,3 +7,5 @@ public interface Contest {
     void getMaximalSpeedTransport(int maxSpeed);
 
 }
+
+// the end
