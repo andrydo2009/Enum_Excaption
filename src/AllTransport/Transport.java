@@ -1,6 +1,7 @@
 
 package AllTransport;
 
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport {
@@ -48,6 +49,7 @@ public abstract class Transport {
         return model;
     }
 
+
     public abstract void getStart();
 
     public abstract void getStop();
@@ -59,18 +61,7 @@ public abstract class Transport {
 
     public abstract void getDiagnosisTransport() throws CantDiagnosisException;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+// the end

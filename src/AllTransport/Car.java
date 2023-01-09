@@ -71,3 +71,5 @@ public class Car extends Transport implements Contest{
         System.out.println ("Проводим диагностику автомобиля " + getBrand () + " " + getModel ());
     }
 }
+
+// the end

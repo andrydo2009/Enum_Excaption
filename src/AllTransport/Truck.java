@@ -27,9 +27,7 @@ public class Truck extends Transport implements Contest {
         {System.out.println("Грузовик "+getBrand()+" "+getModel()+" заезжает на Пит Стоп!");}
         else {System.out.println("Грузовик "+getBrand()+" "+getModel()+" покинул Пит Стоп!");}
     }
-    public Carrying getCarrying() {
-        return carrying;
-    }
+
 
     @Override
     public void getBestTimeRound(double time) {
@@ -71,3 +69,6 @@ public class Truck extends Transport implements Contest {
         System.out.println ("Проводим диагностику грузовика " + getBrand () + " " + getModel ());
     }
 }
+
+
+// the end
