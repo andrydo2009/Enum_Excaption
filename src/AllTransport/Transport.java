@@ -1,6 +1,7 @@
 
 package AllTransport;
 
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport {
@@ -47,6 +48,7 @@ public abstract class Transport {
     public String getModel() {
         return model;
     }
+
 
     public abstract void getStart();
 
