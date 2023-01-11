@@ -2,6 +2,11 @@
 
 package AllTransport;
 
+import AllMechanics.Mechanic;
+import AllMechanics.VehicleRepairSpecification;
+
+import java.util.List;
+
 public class Truck extends Transport implements Contest {
 
     private final  Carrying carrying;
@@ -27,9 +32,7 @@ public class Truck extends Transport implements Contest {
         {System.out.println("Грузовик "+getBrand()+" "+getModel()+" заезжает на Пит Стоп!");}
         else {System.out.println("Грузовик "+getBrand()+" "+getModel()+" покинул Пит Стоп!");}
     }
-    public Carrying getCarrying() {
-        return carrying;
-    }
+
 
     @Override
     public void getBestTimeRound(double time) {
@@ -70,4 +73,19 @@ public class Truck extends Transport implements Contest {
     public void getDiagnosisTransport()  {
         System.out.println ("Проводим диагностику грузовика " + getBrand () + " " + getModel ());
     }
+
+    public void addMechanicTeam(List<Mechanic> mechanic) {
+        for (Mechanic value : mechanic) {
+            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK) {
+                System.out.println ( "Грузовик обслуживает " + value );
+                break;
+            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
+                System.out.println ( "Грузовик обслуживает " + value );
+                break;
+            }
+        }
+    }
+
+
+
 }

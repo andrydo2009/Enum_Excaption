@@ -1,4 +1,3 @@
-
 package AllDrivers;
 
 import AllTransport.Contest;
@@ -16,8 +15,6 @@ public class CarDriver<B extends Transport & Contest> extends  Driver {
                 + " управляет автомобилем " +transport.getModel()+ " и будет участвовать в заезде ");
     }
 
-
-
     @Override
     public void getStart() {
         System.out.println("Водитель "+ getFullNameDriver() + " стартует");
@@ -32,23 +29,6 @@ public class CarDriver<B extends Transport & Contest> extends  Driver {
     public void refuelTransport() {
         System.out.println("Водитель "+ getFullNameDriver() + " заправляется");
     }
-
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-
 
 
 

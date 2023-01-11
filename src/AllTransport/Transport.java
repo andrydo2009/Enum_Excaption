@@ -1,13 +1,17 @@
-
 package AllTransport;
 
+import AllMechanics.Mechanic;
+
+import java.util.List;
 import java.util.Objects;
 
-public abstract class Transport {
+public abstract class Transport  {
     final String brand;
     final String model;
     final double engineVolume;
 
+
+    public abstract void printType();
     public Transport(String brand, String model,double engineVolume) {
         if (brand==null || brand.isBlank()){this.brand="No brand";}
         else {this.brand = brand;}
@@ -17,10 +21,9 @@ public abstract class Transport {
 
         if (engineVolume <= 0.0) { this.engineVolume=1.5;}
         else {this.engineVolume = engineVolume;}
+
     }
 
-
-    public abstract void printType();
 
     @Override
     public boolean equals(Object o) {
@@ -48,6 +51,7 @@ public abstract class Transport {
         return model;
     }
 
+
     public abstract void getStart();
 
     public abstract void getStop();
@@ -55,22 +59,13 @@ public abstract class Transport {
     @Override
     public abstract String toString();
 
-
-
     public abstract void getDiagnosisTransport() throws CantDiagnosisException;
 
 
-
-
-
-
-
-
-
-
-
+    public void addMechanicTeam(List<Mechanic> mechanic) {};
 
 
 
 
 }
+

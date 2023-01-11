@@ -1,11 +1,8 @@
-
 package AllDrivers;
-
-
 
 import java.util.Objects;
 
-public abstract class Driver {
+    public abstract class Driver {
     final String fullNameDriver;
     String driverLicenseCategory;
     final int experienceDriver;
