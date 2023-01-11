@@ -6,13 +6,6 @@ public final Transport transport;
         super ( message );
         this.transport=transport;
     }
-
-    public Transport getTransport() {
-        return transport;
-    }
 }
-
-
-// the end
 
 

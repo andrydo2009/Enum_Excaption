@@ -1,7 +1,4 @@
-
 package AllTransport;
-
-
 
 public enum Carrying {
 
@@ -29,4 +26,3 @@ public enum Carrying {
     }
 }
 
-// the end

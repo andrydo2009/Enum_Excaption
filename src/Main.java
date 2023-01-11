@@ -1,5 +1,4 @@
 
-
 import AllDrivers.BusDriver;
 import AllDrivers.CarDriver;
 import AllDrivers.Driver;
@@ -11,6 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+
+    public static void checkDiagnosis(Transport... transports)  {
+        for (Transport transport : transports)
+            try {
+                transport.getDiagnosisTransport();
+            } catch (CantDiagnosisException e) {
+                System.out.println(e.getMessage());
+            }
+    }
+
     public static void main(String[] args) {
 
 
@@ -37,12 +46,18 @@ public class Main {
         Ivan.goDrive(car1);
         Oleg.goDrive(bus1);
         Semen.goDrive(truck1);
+        Semen.refuelTransport ();
+        Oleg.getStart ();
+        Ivan.getStop ();
         car1.printType();
         car2.printType();
         truck1.printType();
         bus4.printType();
         bus1.printType();
         truck4.printType();
+        car1.getStart ();
+        car2.getStop ();
+
 
         checkDiagnosis ( car1,car2,car3,car4,bus1,bus2,bus3,bus4,truck1,truck2,truck3,truck4 );
 
@@ -50,13 +65,14 @@ public class Main {
         Mechanic mechanic2=new Mechanic ("Ivan","Ivanov","MegaTruck", VehicleRepairSpecification.SPECIFICATION_TRUCK);
         Mechanic mechanic3=new Mechanic ("Sergei","Sergeev","MegaBus", VehicleRepairSpecification.SPECIFICATION_BUS );
         Mechanic mechanic4=new Mechanic ("Andrew","Andreev","MegaAvto", VehicleRepairSpecification.SPECIFICATION_UNIVERSAL );
-
+       // Mechanic mechanic5=new Mechanic ("Petr","Petrov","MegaCar", VehicleRepairSpecification.SPECIFICATION_CAR );
 
         List<Mechanic> mechanicList=new ArrayList<> ();
         mechanicList.add ( mechanic1 );
         mechanicList.add ( mechanic2 );
         mechanicList.add ( mechanic3 );
         mechanicList.add ( mechanic4 );
+       // mechanicList.add ( mechanic5 );
         mechanicList.forEach (System.out::println   );
 
         List<Transport> transportList = new ArrayList<> ();
@@ -81,8 +97,26 @@ public class Main {
         driverList.forEach ( System.out::println  );
 
 
-        repairTransport ( transportList,1,driverList,1,mechanicList, 2);
-        serviceTransport (transportList,0,mechanicList, 3);
+        car1.addMechanicTeam   ( mechanicList ); // Этот метод добавляет к данному транспортному средству механика нужной квалификации!!!!
+        bus1.addMechanicTeam   ( mechanicList );
+        truck1.addMechanicTeam ( mechanicList );
+
+
+        mechanic1.doRegularService ( transportList ); // Этот метод определят исходя из квалификации механика транспортное средство на котором он может проводить ТО
+        mechanic2.doRegularService ( transportList );
+        mechanic3.doRegularService ( transportList );
+        mechanic4.doRegularService ( transportList );
+
+        mechanic1.doRepairTransport (transportList); // Этот метод определят исходя из квалификации механика транспортное средство которое он может отремонтировать
+        mechanic2.doRepairTransport (transportList);
+        mechanic3.doRepairTransport (transportList);
+        mechanic4.doRepairTransport (transportList);
+
+
+
+
+
+
 
 
 
@@ -90,39 +124,6 @@ public class Main {
 
 
     }
-
-    public static void checkDiagnosis(Transport... transports)  {
-        for (Transport transport : transports)
-            try {
-                transport.getDiagnosisTransport();
-            } catch (CantDiagnosisException e) {
-                System.out.println(e.getMessage());
-            }
-    }
-
-
-    public static void serviceTransport (List<Transport> transports,int indexTransport,
-                                         List<Mechanic> mechanic, int indexMechanic)
-    {
-        System.out.println (mechanic.get ( indexMechanic ) + " проводит техобслуживание " + transports.get ( indexTransport ));
-    }
-
-
-    public static void repairTransport(List<Transport> transports,int indexTransport,
-                                       List<Driver> driver, int indexDriver,
-                                       List<Mechanic> mechanic, int indexMechanic)
-
-    {
-
-        System.out.println (mechanic.get ( indexMechanic ) + " обслуживает " + transports.get ( indexTransport ) + " пилот " + driver.get ( indexDriver ) );
-
-
-    }
-
-
-
-
-
 
 
 }

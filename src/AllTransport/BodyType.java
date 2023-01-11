@@ -24,6 +24,3 @@ public enum BodyType {
         return "тип кузова " + getBody();
     }
 }
-
-
-// the end

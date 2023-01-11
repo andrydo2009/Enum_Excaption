@@ -1,6 +1,3 @@
-
-
-
 package AllDrivers;
 
 import AllTransport.Contest;
@@ -34,19 +31,4 @@ public class BusDriver<D extends Transport & Contest> extends Driver {
         System.out.println("Водитель " + getFullNameDriver() + " заправляется");
     }
 
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-
-
-
 }
-
-// the end

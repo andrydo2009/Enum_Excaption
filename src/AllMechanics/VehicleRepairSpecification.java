@@ -23,6 +23,3 @@ public enum VehicleRepairSpecification {
         return " " + getSpecification ()+ " ";
     }
 }
-
-
-// the end
