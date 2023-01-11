@@ -7,5 +7,5 @@ public class CantDriverLicenseException extends Exception {
 
     }
 
-
 }
+

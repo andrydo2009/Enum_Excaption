@@ -1,7 +1,4 @@
-
 package AllTransport;
-
-
 
 public enum Carrying {
 
@@ -28,3 +25,4 @@ public enum Carrying {
         return " грузоподъемность от " + getMinimalCapacity() + " тонн, до " + getMaximalCapacity()+" тонн";
     }
 }
+

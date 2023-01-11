@@ -1,11 +1,21 @@
-
 package AllTransport;
 
+import AllMechanics.Mechanic;
+import AllMechanics.VehicleRepairSpecification;
+
+import java.util.List;
+
 public class Bus extends Transport  implements Contest{
-   private final Seats seats;
+    private final Seats seats;
+
     public Bus(String brand, String model, double engineVolume, Seats seats) {
         super(brand, model, engineVolume);
         this.seats=seats;
+    }
+
+    public Bus(String brand , String model , double engineVolume , List<Mechanic> mechanic , Seats seats) {
+        super ( brand , model , engineVolume , mechanic );
+        this.seats = seats;
     }
 
     @Override
@@ -17,10 +27,6 @@ public class Bus extends Transport  implements Contest{
             String maximalSeats = seats.getMaximalSeats() == null ? "" : "до " + seats.getMaximalSeats();
             System.out.println("вместимость " + seats.getMaximalSeats() + " мест");
         }
-    }
-
-    public Seats getSeats() {
-        return seats;
     }
 
     @Override
@@ -69,7 +75,35 @@ public class Bus extends Transport  implements Contest{
     public void getDiagnosisTransport() {
         System.out.println ("Автобусы не проходят диагностику" );
     }
+
+    @Override
+    public void addMechanicTeam(List<Mechanic> mechanic) {
+        super.addMechanicTeam ( mechanic );
+    }
+
+    @Override
+    public void addMechanicTeamRacing(List<Mechanic> mechanics) {
+        System.out.println ("Автобус " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume());
+        for (Mechanic value : mechanic)
+        { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
+        {System.out.println ( "- обслуживает " + value);}
+        }
+    }
+
+    //    public void addMechanicTeam(List<Mechanic> mechanic) {
+//        for (Mechanic value : mechanic) {
+//            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS) {
+//                System.out.println ( "Автобус обслуживает " + value );
+//                break;
+//            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
+//                System.out.println ( "Автобус обслуживает " + value );
+//                break;
+//            }
+//        }
+//    }
+
+
+
+
 }
-
-
 

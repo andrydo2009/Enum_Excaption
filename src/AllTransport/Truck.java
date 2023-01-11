@@ -2,14 +2,24 @@
 
 package AllTransport;
 
+import AllMechanics.Mechanic;
+import AllMechanics.VehicleRepairSpecification;
+
+import java.util.List;
+
 public class Truck extends Transport implements Contest {
 
     private final  Carrying carrying;
+
     public Truck(String brand, String model, double engineVolume,Carrying carrying) {
         super(brand, model, engineVolume);
         this.carrying=carrying;
     }
 
+    public Truck(String brand , String model , double engineVolume , List<Mechanic> mechanic , Carrying carrying) {
+        super ( brand , model , engineVolume , mechanic );
+        this.carrying = carrying;
+    }
 
     @Override
     public void printType() {
@@ -27,9 +37,7 @@ public class Truck extends Transport implements Contest {
         {System.out.println("Грузовик "+getBrand()+" "+getModel()+" заезжает на Пит Стоп!");}
         else {System.out.println("Грузовик "+getBrand()+" "+getModel()+" покинул Пит Стоп!");}
     }
-    public Carrying getCarrying() {
-        return carrying;
-    }
+
 
     @Override
     public void getBestTimeRound(double time) {
@@ -70,4 +78,33 @@ public class Truck extends Transport implements Contest {
     public void getDiagnosisTransport()  {
         System.out.println ("Проводим диагностику грузовика " + getBrand () + " " + getModel ());
     }
+
+    @Override
+    public void addMechanicTeam(List<Mechanic> mechanic) {
+        super.addMechanicTeam ( mechanic );
+    }
+
+    @Override
+    public void addMechanicTeamRacing(List<Mechanic> mechanics) {
+        System.out.println ("Грузовик " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume());
+        for (Mechanic value : mechanic)
+        { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
+        {System.out.println ( "- обслуживает " + value);}
+        }
+    }
+
+    //    public void addMechanicTeam(List<Mechanic> mechanic) {
+//        for (Mechanic value : mechanic) {
+//            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK) {
+//                System.out.println ( "Грузовик обслуживает " + value );
+//                break;
+//            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
+//                System.out.println ( "Грузовик обслуживает " + value );
+//                break;
+//            }
+//        }
+//    }
+
+
+
 }
