@@ -10,6 +10,10 @@ public abstract class Transport  {
     final String model;
     final double engineVolume;
 
+    List<Mechanic> mechanic;
+
+
+
 
     public abstract void printType();
     public Transport(String brand, String model,double engineVolume) {
@@ -24,6 +28,12 @@ public abstract class Transport  {
 
     }
 
+    public Transport(String brand , String model , double engineVolume , List<Mechanic> mechanic) {
+        this.brand = brand;
+        this.model = model;
+        this.engineVolume = engineVolume;
+        this.mechanic = mechanic;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -62,9 +72,8 @@ public abstract class Transport  {
     public abstract void getDiagnosisTransport() throws CantDiagnosisException;
 
 
-    public void addMechanicTeam(List<Mechanic> mechanic) {};
-
-
+    public void addMechanicTeam(List<Mechanic> mechanic)
+    {};
 
 
 }

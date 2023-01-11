@@ -12,6 +12,11 @@ public class Bus extends Transport  implements Contest{
         this.seats=seats;
     }
 
+    public Bus(String brand , String model , double engineVolume , List<Mechanic> mechanic , Seats seats) {
+        super ( brand , model , engineVolume , mechanic );
+        this.seats = seats;
+    }
+
     @Override
     public void printType() {
         if (seats==null) {
@@ -70,17 +75,27 @@ public class Bus extends Transport  implements Contest{
         System.out.println ("Автобусы не проходят диагностику" );
     }
 
-    public void addMechanicTeam(List<Mechanic> mechanic) {
-        for (Mechanic value : mechanic) {
-            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS) {
-                System.out.println ( "Автобус обслуживает " + value );
-                break;
-            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
-                System.out.println ( "Автобус обслуживает " + value );
-                break;
-            }
+    @Override
+    public void addMechanicTeam(List<Mechanic> mechanic)
+    {
+        System.out.println ("Автобус " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume());
+        for (Mechanic value : mechanic)
+        { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
+        {System.out.println ( "- обслуживает " + value);}
         }
     }
+
+    //    public void addMechanicTeam(List<Mechanic> mechanic) {
+//        for (Mechanic value : mechanic) {
+//            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS) {
+//                System.out.println ( "Автобус обслуживает " + value );
+//                break;
+//            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
+//                System.out.println ( "Автобус обслуживает " + value );
+//                break;
+//            }
+//        }
+//    }
 
 
 

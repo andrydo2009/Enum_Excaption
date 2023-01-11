@@ -15,6 +15,10 @@ public class Truck extends Transport implements Contest {
         this.carrying=carrying;
     }
 
+    public Truck(String brand , String model , double engineVolume , List<Mechanic> mechanic , Carrying carrying) {
+        super ( brand , model , engineVolume , mechanic );
+        this.carrying = carrying;
+    }
 
     @Override
     public void printType() {
@@ -74,17 +78,27 @@ public class Truck extends Transport implements Contest {
         System.out.println ("Проводим диагностику грузовика " + getBrand () + " " + getModel ());
     }
 
-    public void addMechanicTeam(List<Mechanic> mechanic) {
-        for (Mechanic value : mechanic) {
-            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK) {
-                System.out.println ( "Грузовик обслуживает " + value );
-                break;
-            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
-                System.out.println ( "Грузовик обслуживает " + value );
-                break;
-            }
+    @Override
+    public void addMechanicTeam(List<Mechanic> mechanic)
+    {
+        System.out.println ("Грузовик " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume());
+        for (Mechanic value : mechanic)
+        { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
+        {System.out.println ( "- обслуживает " + value);}
         }
     }
+
+    //    public void addMechanicTeam(List<Mechanic> mechanic) {
+//        for (Mechanic value : mechanic) {
+//            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK) {
+//                System.out.println ( "Грузовик обслуживает " + value );
+//                break;
+//            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
+//                System.out.println ( "Грузовик обслуживает " + value );
+//                break;
+//            }
+//        }
+//    }
 
 
 

@@ -6,6 +6,7 @@ import AllMechanics.VehicleRepairSpecification;
 
 import java.util.List;
 
+
 public class Car extends Transport implements Contest {
 
     private final BodyType bodyType;
@@ -13,6 +14,12 @@ public class Car extends Transport implements Contest {
     public Car(String brand , String model , double engineVolume , BodyType bodyType) {
         super ( brand , model , engineVolume );
         this.bodyType = bodyType;
+    }
+
+    public Car(String brand , String model , double engineVolume , List<Mechanic> mechanic , BodyType bodyType) {
+        super ( brand , model , engineVolume , mechanic );
+        this.bodyType = bodyType;
+
     }
 
     @Override
@@ -77,19 +84,30 @@ public class Car extends Transport implements Contest {
     }
 
     @Override
-    public  void addMechanicTeam(List<Mechanic> mechanic) {
+    public void addMechanicTeam(List<Mechanic> mechanic)
 
+    {
+        System.out.println ("Автомобиль " + getBrand () + " " + getModel () + ", объем двигателя " + getEngineVolume ());
         for (Mechanic value : mechanic)
-        {
-            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR) {
-                System.out.println ( "Машину обслуживает " + value );
-                break;
-            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
-                System.out.println ( "Машину обслуживает " + value );
-                break;
-            }
+        { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
+        {System.out.println ( "- обслуживает " + value);}
         }
     }
+
+    //    @Override
+//    public  void addMechanicTeam(List<Mechanic> mechanic) {
+//
+//        for (Mechanic value : mechanic)
+//        {
+//            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR) {
+//                System.out.println ( "Машину обслуживает " + value);
+//                break;
+//            } else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL) {
+//                System.out.println ( "Машину обслуживает " + value );
+//                break;
+//            }
+//        }
+//    }
 }
 
 

@@ -68,49 +68,49 @@ public class Mechanic
     }
 
 
-    public void doRegularService(List<Transport> transports)
-    {
+//    public void doRegularService(List<Transport> transports)
+//    {
+//
+//        for (Transport transport : transports) {
+//            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR && transport instanceof Car) {
+//                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ТО транспортного средства " );
+//                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
+//            }
+//            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS && transport instanceof Bus) {
+//                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ТО транспортного средства " );
+//                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
+//            }
+//            else
+//                if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK && transport instanceof Truck)
+//            {   System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ТО транспортного средства " );
+//                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
+//            }
+//
+//
+//        }
+//    }
 
-        for (Transport transport : transports) {
-            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR && transport instanceof Car) {
-                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ТО транспортного средства " );
-                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
-            }
-            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS && transport instanceof Bus) {
-                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ТО транспортного средства " );
-                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
-            }
-            else
-                if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK && transport instanceof Truck)
-            {   System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ТО транспортного средства " );
-                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
-            }
-
-
-        }
-    }
-
-    public void doRepairTransport(List<Transport> transports)
-    {
-
-        for (Transport transport : transports) {
-            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR && transport instanceof Car) {
-                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ремонт " );
-                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
-            }
-            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS && transport instanceof Bus) {
-                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ремонт  " );
-                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
-            }
-            else
-            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK && transport instanceof Truck)
-            {   System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ремонт " );
-                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
-            }
-
-
-        }
-    }
+//    public void doRepairTransport(List<Transport> transports)
+//    {
+//
+//        for (Transport transport : transports) {
+//            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR && transport instanceof Car) {
+//                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ремонт " );
+//                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
+//            }
+//            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS && transport instanceof Bus) {
+//                System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ремонт  " );
+//                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
+//            }
+//            else
+//            if (getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK && transport instanceof Truck)
+//            {   System.out.print ( " Механик " + getSecondNameMechanic () + " " + getFirstNameMechanic () + " " + " проводит ремонт " );
+//                System.out.println ( " "+transport.getBrand ()+ " " + transport.getModel () );
+//            }
+//
+//
+//        }
+//    }
 
 
 
