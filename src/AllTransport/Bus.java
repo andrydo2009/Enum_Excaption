@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Bus extends Transport  implements Contest{
     private final Seats seats;
+
     public Bus(String brand, String model, double engineVolume, Seats seats) {
         super(brand, model, engineVolume);
         this.seats=seats;
@@ -76,8 +77,12 @@ public class Bus extends Transport  implements Contest{
     }
 
     @Override
-    public void addMechanicTeam(List<Mechanic> mechanic)
-    {
+    public void addMechanicTeam(List<Mechanic> mechanic) {
+        super.addMechanicTeam ( mechanic );
+    }
+
+    @Override
+    public void addMechanicTeamRacing(List<Mechanic> mechanics) {
         System.out.println ("Автобус " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume());
         for (Mechanic value : mechanic)
         { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)

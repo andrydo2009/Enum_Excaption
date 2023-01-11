@@ -10,6 +10,7 @@ import java.util.List;
 public class Truck extends Transport implements Contest {
 
     private final  Carrying carrying;
+
     public Truck(String brand, String model, double engineVolume,Carrying carrying) {
         super(brand, model, engineVolume);
         this.carrying=carrying;
@@ -79,8 +80,12 @@ public class Truck extends Transport implements Contest {
     }
 
     @Override
-    public void addMechanicTeam(List<Mechanic> mechanic)
-    {
+    public void addMechanicTeam(List<Mechanic> mechanic) {
+        super.addMechanicTeam ( mechanic );
+    }
+
+    @Override
+    public void addMechanicTeamRacing(List<Mechanic> mechanics) {
         System.out.println ("Грузовик " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume());
         for (Mechanic value : mechanic)
         { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)

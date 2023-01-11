@@ -1,6 +1,7 @@
 package AllTransport;
 
 import AllMechanics.Mechanic;
+import AllMechanics.VehicleRepairSpecification;
 
 import java.util.List;
 import java.util.Objects;
@@ -10,7 +11,7 @@ public abstract class Transport  {
     final String model;
     final double engineVolume;
 
-    List<Mechanic> mechanic;
+     List<Mechanic> mechanic;
 
 
 
@@ -73,8 +74,24 @@ public abstract class Transport  {
 
 
     public void addMechanicTeam(List<Mechanic> mechanic)
-    {};
+    {
+        System.out.println ("Транспорт " + getBrand () + " " + getModel () + ", объем двигателя " + getEngineVolume ());
+        for (Mechanic value : mechanic)
+        { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR&&value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
 
+        {System.out.println ( "- обслуживает " + value);}
 
+            if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_TRUCK&&value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
+
+            {System.out.println ( "- обслуживает " + value);}
+
+            else if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_BUS&&value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
+
+            {System.out.println ( "- обслуживает " + value);}
+        }
+
+    };
+
+    public abstract void addMechanicTeamRacing(List<Mechanic> mechanics);
 }
 

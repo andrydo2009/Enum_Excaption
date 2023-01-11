@@ -23,9 +23,9 @@ public class Main {
     public static void main(String[] args) {
 
 //
-        Car car1=new Car("Lada","Granta",1.7, BodyType.SEDAN);
-        Car car2=new Car("Audi","A8 50 L TDI quattro",3.0,BodyType.UNIVERSAL);
-        Car car3= new Car("BMW","Z8",3.0,BodyType.COUPE);
+        Car car1 = new Car("Lada","Granta",1.7, BodyType.SEDAN);
+        Car car2 = new Car("Audi","A8 50 L TDI quattro",3.0,BodyType.UNIVERSAL);
+        Car car3 = new Car("BMW","Z8",3.0,BodyType.COUPE);
         Car car4 = new Car("KIA","Sportage",2.4,BodyType.CROSSOVER );
 
 
@@ -76,66 +76,69 @@ public class Main {
         mechanicList.add ( mechanic5 );
 //        mechanicList.forEach (System.out::println   );
 
-//        Car car5=new Car("Lada","Granta",1.7,mechanicList ,BodyType.SEDAN);
-//        Car car6=new Car("Audi","A8 50 L TDI quattro",3.0,mechanicList,BodyType.UNIVERSAL);
-//        Car car7=new Car("BMW","Z8",3.0,mechanicList,BodyType.COUPE);
-//        Car car8=new Car("KIA","Sportage",2.4,mechanicList,BodyType.CROSSOVER );
-//
-//        Bus bus5=new Bus("Volvo","B12",12.5,mechanicList,Seats.EXTRA_SMALL);
-//        Bus bus6=new Bus("Golden Dragon","XML6127",10.5,mechanicList,Seats.BIG);
-//        Bus bus7=new Bus("MAN","Lion's Coach", 11.0,mechanicList,Seats.EXTRA_BIG);
-//        Bus bus8=new Bus("Scania","Irizar", 10.6,mechanicList,Seats.EXTRA_SMALL);
-//
-//        Truck truck5=new Truck("Mercedes-Benz","Actros",12.8, mechanicList,Carrying.N2);
-//        Truck truck6=new Truck("Freightliner","FLD",14.0,mechanicList,Carrying.N2);
-//        Truck truck7=new Truck("Daf","XF",13.2,mechanicList,Carrying.N1);
-//        Truck truck8=new Truck("Volvo","FH",12.8,mechanicList,Carrying.N3);
+        Car car5=new Car("Lada","Granta",1.7,mechanicList ,BodyType.SEDAN);
+        Car car6=new Car("Audi","A8 50 L TDI quattro",3.0,mechanicList,BodyType.UNIVERSAL);
+        Car car7=new Car("BMW","Z8",3.0,mechanicList,BodyType.COUPE);
+        Car car8=new Car("KIA","Sportage",2.4,mechanicList,BodyType.CROSSOVER );
+
+        Bus bus5=new Bus("Volvo","B12",12.5,mechanicList,Seats.EXTRA_SMALL);
+        Bus bus6=new Bus("Golden Dragon","XML6127",10.5,mechanicList,Seats.BIG);
+        Bus bus7=new Bus("MAN","Lion's Coach", 11.0,mechanicList,Seats.EXTRA_BIG);
+        Bus bus8=new Bus("Scania","Irizar", 10.6,mechanicList,Seats.EXTRA_SMALL);
+
+        Truck truck5=new Truck("Mercedes-Benz","Actros",12.8, mechanicList,Carrying.N2);
+        Truck truck6=new Truck("Freightliner","FLD",14.0,mechanicList,Carrying.N2);
+        Truck truck7=new Truck("Daf","XF",13.2,mechanicList,Carrying.N1);
+        Truck truck8=new Truck("Volvo","FH",12.8,mechanicList,Carrying.N3);
 
 
-
-//        List<Transport> transportList = new ArrayList<> ();
-//        transportList.add ( car5 );
-//        transportList.add ( car6 );
-//        transportList.add ( car7 );
-//        transportList.add ( car8 );
-//        transportList.add ( bus5 );
-//        transportList.add ( bus6 );
-//        transportList.add ( bus7 );
-//        transportList.add ( bus8 );
-//        transportList.add ( truck5 );
-//        transportList.add ( truck6 );
-//        transportList.add ( truck7 );
-//        transportList.add ( truck8 );
-//        transportList.forEach ( System.out::println );
 
         List<Transport> transportList = new ArrayList<> ();
-        transportList.add ( car1 );
-        transportList.add ( car2 );
-        transportList.add ( car3 );
-        transportList.add ( car4 );
-        transportList.add ( bus1 );
-        transportList.add ( bus2 );
-        transportList.add ( bus3 );
-        transportList.add ( bus4 );
-        transportList.add ( truck1 );
-        transportList.add ( truck2 );
-        transportList.add ( truck3 );
-        transportList.add ( truck4 );
-        transportList.forEach ( System.out::println );
+        transportList.add ( car5 );
+        transportList.add ( car6 );
+        transportList.add ( car7 );
+        transportList.add ( car8 );
+        transportList.add ( bus5 );
+        transportList.add ( bus6 );
+        transportList.add ( bus7 );
+        transportList.add ( bus8 );
+        transportList.add ( truck5 );
+        transportList.add ( truck6 );
+        transportList.add ( truck7 );
+        transportList.add ( truck8 );
+//        transportList.forEach ( System.out::println );
+
+//        List<Transport> transportList = new ArrayList<> ();
+//        transportList.add ( car1 );
+//        transportList.add ( car2 );
+//        transportList.add ( car3 );
+//        transportList.add ( car4 );
+//        transportList.add ( bus1 );
+//        transportList.add ( bus2 );
+//        transportList.add ( bus3 );
+//        transportList.add ( bus4 );
+//        transportList.add ( truck1 );
+//        transportList.add ( truck2 );
+//        transportList.add ( truck3 );
+//        transportList.add ( truck4 );
+//        transportList.forEach ( System.out::println );
 
         List<Driver> driverList=new ArrayList<> ();
         driverList.add ( Ivan );
         driverList.add ( Oleg );
         driverList.add ( Semen );
 //        driverList.forEach ( System.out::println  );
+//        car1.addMechanicTeam ( mechanicList );
+        car8.addMechanicTeamRacing ( mechanicList );
+        bus7.addMechanicTeamRacing ( mechanicList );
+        truck7.addMechanicTeamRacing ( mechanicList );
 
 
 
 
-
-       car1.addMechanicTeam   ( mechanicList ); // Этот метод добавляет к данному транспортному средству механика нужной квалификации!!!!
-       bus2.addMechanicTeam   ( mechanicList );
-       truck2.addMechanicTeam ( mechanicList );
+//       car1.addMechanicTeamRacing  ( mechanicList ); // Этот метод добавляет к данному транспортному средству механика нужной квалификации!!!!
+//       bus2.addMechanicTeamRacing   ( mechanicList );
+//       truck2.addMechanicTeamRacing ( mechanicList );
 
 
 //        mechanic1.doRegularService ( transportList ); // Этот метод определят исходя из квалификации механика транспортное средство на котором он может проводить ТО

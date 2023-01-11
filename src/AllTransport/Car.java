@@ -11,6 +11,7 @@ public class Car extends Transport implements Contest {
 
     private final BodyType bodyType;
 
+
     public Car(String brand , String model , double engineVolume , BodyType bodyType) {
         super ( brand , model , engineVolume );
         this.bodyType = bodyType;
@@ -84,9 +85,12 @@ public class Car extends Transport implements Contest {
     }
 
     @Override
-    public void addMechanicTeam(List<Mechanic> mechanic)
+    public void addMechanicTeam(List<Mechanic> mechanic) {
+        super.addMechanicTeam ( mechanic );
+    }
 
-    {
+    @Override
+    public void addMechanicTeamRacing(List<Mechanic> mechanics) {
         System.out.println ("Автомобиль " + getBrand () + " " + getModel () + ", объем двигателя " + getEngineVolume ());
         for (Mechanic value : mechanic)
         { if (value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_CAR||value.getVehicleRepairSpecification () == VehicleRepairSpecification.SPECIFICATION_UNIVERSAL)
